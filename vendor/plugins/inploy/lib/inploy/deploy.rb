@@ -29,7 +29,7 @@ module Inploy
       else
         checkout = "&& $(git branch | grep -vq #{branch}) && git checkout -f -b #{branch} origin/#{branch}"
       end
-      remote_run "cd #{path} && #{@sudo}git clone --depth 1 #{repository} #{application} && cd #{application} #{checkout} && #{@sudo} /opt/ruby-enterprise-1.8.6-20090610/bin/rake inploy:local:setup environment=#{environment}"
+      remote_run "cd #{path} && #{@sudo}git clone --depth 1 #{repository} #{application} && cd #{application} #{checkout} && #{@sudo}rake inploy:local:setup environment=#{environment}"
     end
 
     def local_setup
@@ -41,7 +41,7 @@ module Inploy
     end
 
     def remote_update
-      remote_run "cd #{application_path} && #{@sudo} /opt/ruby-enterprise-1.8.6-20090610/bin/rake inploy:local:update environment=#{environment}"
+      remote_run "cd #{application_path} && #{@sudo}rake inploy:local:update environment=#{environment}"
     end
 
     def local_update
