@@ -41,7 +41,7 @@ module Inploy
     end
 
     def remote_update
-      remote_run "cd #{application_path} && #{@sudo}rake inploy:local:update environment=#{environment}"
+      remote_run "cd #{application_path} && #{@sudo} /opt/ruby-enterprise-1.8.6-20090610/bin/rake inploy:local:update environment=#{environment}"
     end
 
     def local_update

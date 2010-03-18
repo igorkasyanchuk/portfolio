@@ -22,7 +22,7 @@ module Inploy
     end
 
     def rake_if_included(command)
-      rake command if tasks.include?("rake #{command.split[0]}")
+      rake command if tasks.include?("/opt/ruby-enterprise-1.8.6-20090610/bin/rake #{command.split[0]}")
     end
 
     def ruby_if_exists(file, opts)
