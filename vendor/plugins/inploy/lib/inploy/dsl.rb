@@ -18,7 +18,7 @@ module Inploy
     end
 
     def rake(command)
-      run "rake #{command}"
+      run "/opt/ruby-enterprise-1.8.6-20090610/bin/rake #{command}"
     end
 
     def rake_if_included(command)
